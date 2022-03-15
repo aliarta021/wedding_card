@@ -68,7 +68,6 @@ class _HeaderState extends State<Header> with SingleTickerProviderStateMixin {
                     spacing: 8.0,
                     runSpacing: 4.0,
                     children: [
-                      Text(endTime),
                       DateContainer(animation: _animation,time: '',textTime: 'روز',),
                       DateContainer(animation: _animation,time: '1',textTime: 'ساعت',),
                       DateContainer(animation: _animation,time: '1',textTime: 'دقیقه',),
