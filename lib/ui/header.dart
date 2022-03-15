@@ -25,6 +25,11 @@ class _HeaderState extends State<Header> with SingleTickerProviderStateMixin {
       });
     super.initState();
   }
+  @override
+  void dispose() {
+    _controller?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

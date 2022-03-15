@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wedding_card/ui/conmponents/header.dart';
+import 'package:wedding_card/ui/body.dart';
+import 'package:wedding_card/ui/date_info.dart';
+import 'package:wedding_card/ui/header.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -11,6 +13,8 @@ class App extends StatelessWidget {
         body: ListView(
           children: const [
             Header(),
+            Body(),
+            DateInfo(),
           ],
         ),
       ),

@@ -37,15 +37,18 @@ flutter:
   fonts:
     - family: IranSans
       fonts:
-        - asset: assets/fonts/IRANSansWeb.ttf
-        - asset: assets/fonts/IRANSansWeb_Black.ttf
-        - asset: assets/fonts/IRANSansWeb_Bold.ttf
-        - asset: assets/fonts/IRANSansWeb_Light.ttf
-        - asset: assets/fonts/IRANSansWeb_Medium.ttf
-        - asset: assets/fonts/IRANSansWeb_UltraLight.ttf
+        - asset: assets/fonts/IRANSansWeb(FaNum).ttf
+#        - asset: assets/fonts/IRANSansWeb_Black.ttf
+#        - asset: assets/fonts/IRANSansWeb_Bold.ttf
+#        - asset: assets/fonts/IRANSansWeb_Light.ttf
+#        - asset: assets/fonts/IRANSansWeb_Medium.ttf
+#        - asset: assets/fonts/IRANSansWeb_UltraLight.ttf
     - family: Aviny
       fonts:
         - asset: assets/fonts/Aviny.ttf
+    - family: IranNastaliq
+      fonts:
+        - asset: assets/fonts/IranNastaliq.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
