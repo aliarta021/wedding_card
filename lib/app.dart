@@ -15,6 +15,7 @@ class App extends StatelessWidget {
             Header(),
             Body(),
             DateInfo(),
+            Container(),
           ],
         ),
       ),

@@ -10,6 +10,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   date_count_down: ^2.1.0
+  google_maps: ^6.1.0
 
 dev_dependencies:
   flutter_test:
