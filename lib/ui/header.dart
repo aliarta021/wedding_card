@@ -1,19 +1,39 @@
-import 'package:date_count_down/countdown.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:date_count_down/date_count_down.dart';
+
+const oneSec = Duration(seconds: 1);
 
 class Header extends StatefulWidget {
-  const Header({Key? key}) : super(key: key);
+  Header({Key? key}) : super(key: key);
+  int seconds = DateTime.parse('2022-03-27 18:00:00').difference(DateTime.now()).inMilliseconds;
+  int timerSeconds = DateTime.fromMillisecondsSinceEpoch(DateTime.parse('2022-03-27 18:00:00').difference(DateTime.now()).inMilliseconds)
+      .difference(DateTime.now())
+      .inSeconds;
 
   @override
   _HeaderState createState() => _HeaderState();
 }
 
 class _HeaderState extends State<Header> with SingleTickerProviderStateMixin {
+  late int _start;
+  late Timer _timer;
+
   AnimationController? _controller;
   Animation? _animation;
+
   @override
   void initState() {
+    _start = widget.seconds;
+    _timer = Timer.periodic(
+      oneSec,
+      (Timer timer) => setState(
+        () {
+          _start = _start - 1;
+        },
+      ),
+    );
+
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 800),
@@ -25,14 +45,17 @@ class _HeaderState extends State<Header> with SingleTickerProviderStateMixin {
       });
     super.initState();
   }
+
   @override
   void dispose() {
     _controller?.dispose();
+    _timer.cancel();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    Duration duration = Duration(seconds: _start);
     return SizedBox(
       height: MediaQuery.of(context).size.height - 50,
       child: Stack(
@@ -73,10 +96,27 @@ class _HeaderState extends State<Header> with SingleTickerProviderStateMixin {
                     spacing: 8.0,
                     runSpacing: 4.0,
                     children: [
-                      DateContainer(animation: _animation,time: '',textTime: 'روز',),
-                      DateContainer(animation: _animation,time: '1',textTime: 'ساعت',),
-                      DateContainer(animation: _animation,time: '1',textTime: 'دقیقه',),
-                      DateContainer(animation: _animation,time: '1',textTime: 'ثانیه',),
+                      DateContainer(
+                        animation: _animation,
+                        time: widget.date1.day.toString(),
+                        textTime: 'روز',
+                      ),
+                      DateContainer(
+                        animation: _animation,
+                        time: duration.inHours.remainder(12).toString().padLeft(2, "0"),
+                        textTime: 'ساعت',
+                      ),
+                      DateContainer(
+                        animation: _animation,
+                        time: duration.inMinutes.remainder(60).toString().padLeft(2, "0"),
+                        textTime: 'دقیقه',
+                      ),
+                      DateContainer(
+                        animation: _animation,
+                        time:
+                            duration.inSeconds.remainder(60).toString().padLeft(2, "0"),
+                        textTime: 'ثانیه',
+                      ),
                     ],
                     direction: Axis.horizontal,
                   ),
@@ -96,7 +136,8 @@ class DateContainer extends StatelessWidget {
     required this.time,
     required this.textTime,
     Key? key,
-  }) : _animation = animation, super(key: key);
+  })  : _animation = animation,
+        super(key: key);
 
   final Animation? _animation;
   String time;
@@ -116,12 +157,22 @@ class DateContainer extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(time, style: const TextStyle(
-                fontSize: 16,fontFamily: 'IranSans',color: Colors.white,
-              ), ),
-              Text(textTime, style: const TextStyle(
-                fontFamily: 'IranSans', fontSize: 16, color: Colors.white,
-              ),),
+              Text(
+                time,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontFamily: 'IranSans',
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                textTime,
+                style: const TextStyle(
+                  fontFamily: 'IranSans',
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
+              ),
             ],
           ),
         ));

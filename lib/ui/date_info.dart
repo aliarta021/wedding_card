@@ -1,12 +1,14 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class DateInfo extends StatelessWidget {
   const DateInfo({Key? key}) : super(key: key);
+  static const oneSec = Duration(seconds: 1);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: const Color(0xff828282),
+      color: const Color(0xff2d3436),
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
       child: Column(
         children: [
@@ -42,28 +44,129 @@ class DateInfo extends StatelessWidget {
                 ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Divider(color: Colors.white,),
+                  child: Divider(
+                    color: Colors.white,
+                  ),
                 ),
                 Row(
                   children: [
                     Expanded(
                       child: Column(
                         children: const [
-                          Icon(Icons.alarm_outlined, size: 18,color: Colors.white,),
-                          Text('18:00\n تا خاموشی ستاره ها',style: TextStyle(fontFamily: 'IranSans', fontSize: 16, color: Colors.white),textAlign: TextAlign.center,),
+                          Icon(
+                            Icons.alarm_outlined,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            '18:00\n تا خاموشی ستاره ها',
+                            style: TextStyle(
+                                fontFamily: 'IranSans',
+                                fontSize: 16,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
                         ],
                       ),
                     ),
                     Expanded(
                       child: Column(
                         children: const [
-                          Icon(Icons.calendar_today_outlined, size: 20,color: Colors.white,),
-                          Text('دوشنبه 8\n فروردین 1401',style: TextStyle(fontFamily: 'IranSans', fontSize: 16, color: Colors.white),textAlign: TextAlign.center,),
+                          Icon(
+                            Icons.calendar_today_outlined,
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            'دوشنبه 8\n فروردین 1401',
+                            style: TextStyle(
+                                fontFamily: 'IranSans',
+                                fontSize: 16,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
                         ],
                       ),
                     ),
-
                   ],
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'آدرس',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'IranSans',
+                              color: Colors.white),
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
+                        Icon(
+                          Icons.place_outlined,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      'بندر پل، منزل‌ آقای سلیمانی',
+                      style: TextStyle(
+                          fontFamily: 'IranSans',
+                          fontSize: 16,
+                          color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(6),
+                    ),
+                    color: const Color(0xffff9ff3).withOpacity(0.8),
+                  ),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'مکان یابی',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'IranSans',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.place_outlined,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
                 ),
                 const Text(
                   'به سنت عشق گرد هم می آییم',
@@ -82,32 +185,134 @@ class DateInfo extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 18,),
+                const SizedBox(
+                  height: 18,
+                ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Divider(color: Colors.white,),
+                  child: Divider(
+                    color: Colors.white,
+                  ),
                 ),
-                const SizedBox(height: 18,),
+                const SizedBox(
+                  height: 18,
+                ),
                 Row(
                   children: [
                     Expanded(
                       child: Column(
                         children: const [
-                          Icon(Icons.alarm_outlined, size: 18,color: Colors.white,),
-                          Text('18:00\n تا خاموشی ستاره ها',style: TextStyle(fontFamily: 'IranSans', fontSize: 16, color: Colors.white),textAlign: TextAlign.center,),
+                          Icon(
+                            Icons.alarm_outlined,
+                            size: 18,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            '18:00\n تا خاموشی ستاره ها',
+                            style: TextStyle(
+                                fontFamily: 'IranSans',
+                                fontSize: 16,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
                         ],
                       ),
                     ),
                     Expanded(
                       child: Column(
                         children: const [
-                          Icon(Icons.calendar_today_outlined, size: 20,color: Colors.white,),
-                          Text('یکشنبه 7\n فروردین 1401',style: TextStyle(fontFamily: 'IranSans', fontSize: 16, color: Colors.white),textAlign: TextAlign.center,),
+                          Icon(
+                            Icons.calendar_today_outlined,
+                            size: 20,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            'یکشنبه 7\n فروردین 1401',
+                            style: TextStyle(
+                                fontFamily: 'IranSans',
+                                fontSize: 16,
+                                color: Colors.white),
+                            textAlign: TextAlign.center,
+                          ),
                         ],
                       ),
                     ),
-
                   ],
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'آدرس',
+                          style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'IranSans',
+                              color: Colors.white),
+                        ),
+                        SizedBox(
+                          width: 3,
+                        ),
+                        Icon(
+                          Icons.place_outlined,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                    const Text(
+                      'خیبان فلان جنب کوچه فلان',
+                      style: TextStyle(
+                          fontFamily: 'IranSans',
+                          fontSize: 16,
+                          color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(6),
+                    ),
+                    color: const Color(0xffff9ff3).withOpacity(0.8),
+                  ),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Text(
+                          'مکان یابی',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'IranSans',
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Icon(
+                          Icons.place_outlined,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 const Text(
                   'به سنت عشق گرد هم می آییم',
@@ -126,12 +331,29 @@ class DateInfo extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 18,),
+                const SizedBox(
+                  height: 18,
+                ),
                 const Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Divider(color: Colors.white,),
+                  child: Divider(
+                    color: Colors.white,
+                  ),
                 ),
-                const SizedBox(height: 18,),
+                const SizedBox(
+                  height: 68,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(Icons.favorite, size: 18,color: Colors.red,),
+                    SizedBox(width: 6,),
+                    Text(
+                      'حضور گرمتان قوت قلبی است برای ما',
+                      style: TextStyle(fontFamily: 'IranSans', fontSize: 12,color: Colors.white),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
