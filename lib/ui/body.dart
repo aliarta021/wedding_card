@@ -41,7 +41,8 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             height: 100,
           ),
           const Text(
-            'یکشنبه 7 فروردین ماه 1401',
+            'یکشنبه و دوشنبه \n هفتم و هشتم فروردین ماه 1401 ',
+            textAlign: TextAlign.center,
             style: TextStyle(
                 fontSize: 18,
                 fontFamily: 'IranSans',
@@ -50,7 +51,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
           const SizedBox(
             height: 18,
           ),
-          const Text('1401.1.7',
+          const Text('1401.1.7  , 1401.1.8',
               style: TextStyle(
                   fontSize: 18,
                   fontFamily: 'IranSans',

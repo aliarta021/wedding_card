@@ -79,7 +79,7 @@ class DateInfo extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Text(
-                            'دوشنبه 8\n فروردین 1401',
+                            'یکشنبه 7\n فروردین 1401',
                             style: TextStyle(
                                 fontFamily: 'IranSans',
                                 fontSize: 16,
@@ -231,7 +231,7 @@ class DateInfo extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Text(
-                            'یکشنبه 7\n فروردین 1401',
+                            'دوشنبه 8\n فروردین 1401',
                             style: TextStyle(
                                 fontFamily: 'IranSans',
                                 fontSize: 16,
@@ -271,7 +271,7 @@ class DateInfo extends StatelessWidget {
                     ),
                     const SizedBox(height: 8,),
                     const Text(
-                      'خیبان فلان جنب کوچه فلان',
+                      'بندر پل، منزل‌ آقای سلیمانی',
                       style: TextStyle(
                           fontFamily: 'IranSans',
                           fontSize: 16,
