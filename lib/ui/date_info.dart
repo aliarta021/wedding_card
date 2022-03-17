@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:maps_launcher/maps_launcher.dart';
+import 'package:map_launcher/map_launcher.dart';
 
 class DateInfo extends StatelessWidget {
   const DateInfo({Key? key}) : super(key: key);
@@ -117,7 +117,9 @@ class DateInfo extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 8,),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     const Text(
                       'بندر پل، منزل‌ آقای سلیمانی',
                       style: TextStyle(
@@ -142,8 +144,12 @@ class DateInfo extends StatelessWidget {
                     color: const Color(0xffff9ff3).withOpacity(0.8),
                   ),
                   child: InkWell(
-                    onTap: () {
-                      MapsLauncher.launchCoordinates(27.006178, 55.738483);
+                    onTap: () async {
+                      await MapLauncher.showMarker(
+                        mapType: MapType.google,
+                        coords: Coords(27.006178, 55.738483),
+                        title: '',
+                      );
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -269,7 +275,9 @@ class DateInfo extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 8,),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     const Text(
                       'بندر پل، منزل‌ آقای سلیمانی',
                       style: TextStyle(
@@ -294,8 +302,12 @@ class DateInfo extends StatelessWidget {
                     color: const Color(0xffff9ff3).withOpacity(0.8),
                   ),
                   child: InkWell(
-                    onTap: () {
-                      MapsLauncher.launchCoordinates(27.006178, 55.738483);
+                    onTap: () async{
+                      await MapLauncher.showMarker(
+                        mapType: MapType.google,
+                        coords: Coords(27.006178, 55.738483),
+                        title: '',
+                      );
                     },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -321,7 +333,9 @@ class DateInfo extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 const Text(
                   'به سنت عشق گرد هم می آییم',
                   style: TextStyle(
@@ -371,7 +385,9 @@ class DateInfo extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 8,),
+                const SizedBox(
+                  height: 8,
+                ),
               ],
             ),
           ),

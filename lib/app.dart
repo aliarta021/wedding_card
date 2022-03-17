@@ -32,7 +32,7 @@ class _AppState extends State<App> {
           child: FloatingActionButton(
             onPressed: () async {
               if(isPlayed != 1){
-                isPlayed = await _audioPlayer.play('https://uupload.ir/view/_jingo_jinge_saz_miad_128_mfia.mp3/');
+                isPlayed = await _audioPlayer.play("https://audio-previews.elements.envatousercontent.com/files/256031414/preview.mp3?response-content-disposition=attachment%3B+filename%3D%22EP2BYSK-romantic-inspiring-wedding.mp3%22");
                 setState(() {
                   isPlayed = 1;
                 });
