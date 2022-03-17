@@ -9,9 +9,9 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  date_count_down: ^2.1.0
-#  maps_launcher: ^2.0.1
-
+  maps_launcher: ^2.0.1
+  audioplayers: ^0.20.1
+  cached_network_image: ^3.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

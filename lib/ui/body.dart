@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -24,6 +25,11 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
       });
     super.initState();
   }
+  @override
+  void dispose() {
+    _controller?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +38,7 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
       child: Column(
         children: [
           const SizedBox(
-            height: 35,
+            height: 100,
           ),
           const Text(
             'یکشنبه 7 فروردین ماه 1401',
@@ -54,9 +60,8 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
           ),
           Container(
               constraints: const BoxConstraints(maxWidth: 110, minHeight: 100),
-              child: Image(
-                image: const NetworkImage(
-                    'https://dl.weddingcart.ir/img/base/groom.jpg'),
+              child: CachedNetworkImage(
+                imageUrl: 'https://dl.weddingcart.ir/img/base/groom.jpg',
                 width: _animation?.value,
               )),
           const Text(
@@ -64,16 +69,16 @@ class _BodyState extends State<Body> with SingleTickerProviderStateMixin {
             style: TextStyle(fontFamily: 'IranSans', fontSize: 16),
           ),
           const Text(
-            'مسعود',
+            'مسعود ملاحی',
             style: TextStyle(color: Color(0xffff9ff3), fontSize: 26),
           ),
           Container(
-              constraints: const BoxConstraints(maxWidth: 110, minHeight: 100),
-              child: Image(
-                image: const NetworkImage(
-                    'https://dl.weddingcart.ir/img/base/bride.jpg'),
-                width: _animation?.value,
-              )),
+            constraints: const BoxConstraints(maxWidth: 110, minHeight: 100),
+            child: CachedNetworkImage(
+              imageUrl: 'https://dl.weddingcart.ir/img/base/bride.jpg',
+              width: _animation?.value,
+            ),
+          ),
           const Text(
             'عروس خانوم',
             style: TextStyle(fontFamily: 'IranSans', fontSize: 16),

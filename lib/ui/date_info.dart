@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:maps_launcher/maps_launcher.dart';
 
 class DateInfo extends StatelessWidget {
   const DateInfo({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class DateInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: const Color(0xff2d3436),
-      padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+      padding: const EdgeInsets.symmetric(vertical: 38, horizontal: 18),
       child: Column(
         children: [
           const Text(
@@ -21,7 +22,7 @@ class DateInfo extends StatelessWidget {
                 color: Colors.white),
           ),
           const SizedBox(
-            height: 68,
+            height: 58,
           ),
           Container(
             decoration: BoxDecoration(
@@ -116,6 +117,7 @@ class DateInfo extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 8,),
                     const Text(
                       'بندر پل، منزل‌ آقای سلیمانی',
                       style: TextStyle(
@@ -127,7 +129,7 @@ class DateInfo extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 18,
                 ),
                 Container(
                   padding: const EdgeInsets.all(8),
@@ -140,7 +142,9 @@ class DateInfo extends StatelessWidget {
                     color: const Color(0xffff9ff3).withOpacity(0.8),
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      MapsLauncher.launchCoordinates(27.006178, 55.738483);
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
@@ -166,7 +170,7 @@ class DateInfo extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 8,
+                  height: 16,
                 ),
                 const Text(
                   'به سنت عشق گرد هم می آییم',
@@ -265,6 +269,7 @@ class DateInfo extends StatelessWidget {
                         ),
                       ],
                     ),
+                    const SizedBox(height: 8,),
                     const Text(
                       'خیبان فلان جنب کوچه فلان',
                       style: TextStyle(
@@ -276,7 +281,7 @@ class DateInfo extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 12,
+                  height: 18,
                 ),
                 Container(
                   padding: const EdgeInsets.all(8),
@@ -289,7 +294,9 @@ class DateInfo extends StatelessWidget {
                     color: const Color(0xffff9ff3).withOpacity(0.8),
                   ),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      MapsLauncher.launchCoordinates(27.006178, 55.738483);
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
@@ -314,6 +321,7 @@ class DateInfo extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 16,),
                 const Text(
                   'به سنت عشق گرد هم می آییم',
                   style: TextStyle(
@@ -341,19 +349,29 @@ class DateInfo extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 68,
+                  height: 28,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Icon(Icons.favorite, size: 18,color: Colors.red,),
-                    SizedBox(width: 6,),
+                    Icon(
+                      Icons.favorite,
+                      size: 18,
+                      color: Colors.red,
+                    ),
+                    SizedBox(
+                      width: 6,
+                    ),
                     Text(
                       'حضور گرمتان قوت قلبی است برای ما',
-                      style: TextStyle(fontFamily: 'IranSans', fontSize: 12,color: Colors.white),
+                      style: TextStyle(
+                          fontFamily: 'IranSans',
+                          fontSize: 12,
+                          color: Colors.white),
                     ),
                   ],
                 ),
+                const SizedBox(height: 8,),
               ],
             ),
           ),
